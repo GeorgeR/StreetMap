@@ -14,6 +14,6 @@ class STREETMAPRUNTIME_API AStreetMapActor : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "StreetMap")
 		class UStreetMapComponent* StreetMapComponent;
 
-public: 
+public:
 	FORCEINLINE class UStreetMapComponent* GetStreetMapComponent() { return StreetMapComponent; }
 };

@@ -61,7 +61,7 @@ public:
 	}
 
 	/** Returns true, if the input PropertyName correspond to a collision property. */
-	bool IsCollisionProperty(const FName& PropertyName) const 
+	bool IsCollisionProperty(const FName& PropertyName) const
 	{
 		return PropertyName == TEXT("bGenerateCollision") || PropertyName == TEXT("bAllowDoubleSidedGeometry");
 	}
