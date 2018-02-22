@@ -65,8 +65,8 @@ bool FPolygonTools::IsPointInsidePolygon( const TArray<FVector2D>& Polygon, cons
 
 	for( int CornerIndex = 0; CornerIndex < NumCorners; CornerIndex++ )
 	{
-		if( ( Polygon[ CornerIndex ].Y < Point.Y && Polygon[ PreviousCornerIndex ].Y >= Point.Y || Polygon[ PreviousCornerIndex ].Y < Point.Y && Polygon[ CornerIndex ].Y >= Point.Y ) && 
-			( Polygon[ CornerIndex ].X <= Point.X || Polygon[ PreviousCornerIndex ].X <= Point.X ) )
+		if( ((( Polygon[ CornerIndex ].Y < Point.Y ) && ( Polygon[ PreviousCornerIndex ].Y >= Point.Y )) || (( Polygon[ PreviousCornerIndex ].Y < Point.Y ) && ( Polygon[ CornerIndex ].Y >= Point.Y ))) &&
+			((( Polygon[ CornerIndex ].X <= Point.X ) || ( Polygon[ PreviousCornerIndex ].X <= Point.X ))))
 		{
 			bIsInside ^= ( Polygon[ CornerIndex ].X + ( Point.Y - Polygon[ CornerIndex ].Y ) / ( Polygon[ PreviousCornerIndex ].Y - Polygon[ CornerIndex ].Y )*( Polygon[ PreviousCornerIndex ].X - Polygon[ CornerIndex ].X ) < Point.X );
 		}

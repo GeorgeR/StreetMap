@@ -1,7 +1,7 @@
 // Copyright 2017 Mike Fricker. All Rights Reserved.
 
-#include "StreetMapImporting.h"
 #include "StreetMapStyle.h"
+#include "StreetMapImporting.h"
 #include "SlateStyle.h"
 #include "IPluginManager.h"
 

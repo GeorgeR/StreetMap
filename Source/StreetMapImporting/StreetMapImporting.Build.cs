@@ -1,12 +1,14 @@
 // Copyright 2017 Mike Fricker. All Rights Reserved.
+using UnrealBuildTool;
 
-namespace UnrealBuildTool.Rules
-{
-    public class StreetMapImporting : ModuleRules
+public class StreetMapImporting : ModuleRules
+{  
+    public StreetMapImporting(ReadOnlyTargetRules Target) : base(Target)
     {
-        public StreetMapImporting(TargetInfo Target)
-        {
-            PrivateDependencyModuleNames.AddRange(
+        PublicIncludePaths.Add("StreetMapRuntime/Public");
+        PrivateIncludePaths.Add("StreetMapImporting/Private");
+
+        PrivateDependencyModuleNames.AddRange(
                 new string[] {
                     "Core",
                     "CoreUObject",
@@ -26,8 +28,6 @@ namespace UnrealBuildTool.Rules
                     "AssetTools",
                     "AssetRegistry",
                     "StreetMapRuntime"
-                }
-            );
-        }
+         });
     }
 }

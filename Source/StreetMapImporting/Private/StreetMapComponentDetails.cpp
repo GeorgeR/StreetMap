@@ -1,9 +1,7 @@
 // Copyright 2017 Mike Fricker. All Rights Reserved.
 
-#include "StreetMapImporting.h"
-
 #include "StreetMapComponentDetails.h"
-
+#include "StreetMapImporting.h"
 #include "SlateBasics.h"
 #include "RawMesh.h"
 #include "PropertyEditorModule.h"
@@ -43,7 +41,7 @@ void FStreetMapComponentDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBu
 {
 	LastDetailBuilderPtr = &DetailBuilder;
 
-	TArray <TWeakObjectPtr<UObject>> SelectedObjects = DetailBuilder.GetDetailsView().GetSelectedObjects();
+	TArray <TWeakObjectPtr<UObject>> SelectedObjects = DetailBuilder.GetDetailsView()->GetSelectedObjects();
 
 	for (const TWeakObjectPtr<UObject>& Object : SelectedObjects)
 	{
@@ -58,7 +56,7 @@ void FStreetMapComponentDetails::CustomizeDetails(IDetailLayoutBuilder& DetailBu
 
 	if (SelectedStreetMapComponent == nullptr)
 	{
-		TArray<TWeakObjectPtr<AActor>> SelectedActors = DetailBuilder.GetDetailsView().GetSelectedActors();
+		TArray<TWeakObjectPtr<AActor>> SelectedActors = DetailBuilder.GetDetailsView()->GetSelectedActors();
 
 		for (const TWeakObjectPtr<UObject>& Object : SelectedObjects)
 		{
